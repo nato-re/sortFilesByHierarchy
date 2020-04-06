@@ -15,3 +15,10 @@ document.getElementById("filepicker").addEventListener("change", function(event)
     output.appendChild(item);
   };
 }, false);
+function myFunction() 
+    {
+    for (let z=0; z<listing.length; z++)
+        var str = listing[z]; 
+        var res = str.match("AVD",gi);
+        document.write("artigos").innerHTML = res;
+    }
