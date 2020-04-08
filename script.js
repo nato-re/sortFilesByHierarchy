@@ -18,7 +18,7 @@ document.getElementById("filepicker").addEventListener("change", function(event)
   };
   return fileList
 }, false);
-console.log(fileList) // AQUIAQUI AQUI. ESSA VARIÁVEL
+console.log(fileList.map[e => e.name]) // AQUIAQUI AQUI. ESSA VARIÁVEL
 function myFunction() 
     {
     for (let z=0; z<listing.length; z++)
