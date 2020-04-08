@@ -1,6 +1,7 @@
 const submitButton = document.getElementById('submit')
 let verifyInput;
 let fileList;
+
 submitButton.addEventListener('click', () => {
   //verifyInput()
   //listFilesInFolder
@@ -23,18 +24,22 @@ document.getElementById("filepicker").addEventListener("change", function(event)
   
 }, false);
 
-function myFunction() // olha essa função 
+function myFunction() // olha essa função
 {
+
   if (!fileList) // caso seja 0 ele volta e não da erro, remove e vê o q rola.
   {      
  // Return from the function.
  // Or handle it in a wiser manner than me.
  return;
   }
-  {
-    for (let z=0; z<fileList.length; z++)
-        var str = fileList[z]; 
-        var res = str.match(/AVD/g);
-        document.getElementById("artigos").innerHTML= res;
+ {
+    for (let a=0; a<fileList.length; a++)
+    {
+        var filename = fileList[a].name;        
+        var patt = new RegExp("Aplicabilidade"); 
+        var res = patt.test(filename);
+        document.getElementById("artigos").innerHTML=res;
+    }
   }
 }
