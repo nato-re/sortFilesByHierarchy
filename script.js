@@ -20,7 +20,6 @@ document.getElementById("filepicker").addEventListener("change", function(event)
   console.log(fileList.map(e => e.name)) // AQUIAQUI AQUI. ESSA VARIÁVEL
   return filelist
 }, false);
-function myFunction() 
-  {
-    document.getElementById("artigos").innerHTML = filelist.length;
-  }
+function myFunction() {
+  document.getElementById("artigos").innerHTML = filelist.length;
+}
