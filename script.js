@@ -1,5 +1,6 @@
 const submitButton = document.getElementById('submit')
 let verifyInput;
+var filelist;
 submitButton.addEventListener('click', () => {
   //verifyInput()
   //listFilesInFolder
@@ -16,13 +17,10 @@ document.getElementById("filepicker").addEventListener("change", function(event)
     item.innerHTML = files[i].webkitRelativePath;
     output.appendChild(item);
   };
-  return fileList
+  console.log(fileList.map(e => e.name)) // AQUIAQUI AQUI. ESSA VARIÁVEL
+  return filelist
 }, false);
-console.log(fileList.map[e => e.name]) // AQUIAQUI AQUI. ESSA VARIÁVEL
 function myFunction() 
-    {
-    for (let z=0; z<listing.length; z++)
-        var str = listing[z]; 
-        var res = str.match("AVD",gi);
-        document.write("artigos").innerHTML = res;
-    }
+  {
+    document.getElementById("artigos").innerHTML = filelist.length;
+  }
