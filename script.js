@@ -1,6 +1,6 @@
 const submitButton = document.getElementById('submit')
 let verifyInput;
-var fileList;
+let fileList;
 submitButton.addEventListener('click', () => {
   //verifyInput()
   //listFilesInFolder
@@ -31,6 +31,10 @@ function myFunction() // olha essa função
  // Or handle it in a wiser manner than me.
  return;
   }
-  var xoxo = fileList.length;
-  document.getElementById("artigos").innerHTML = xoxo;
+  {
+    for (let z=0; z<fileList.length; z++)
+        var str = fileList[z]; 
+        var res = str.match(/AVD/g);
+        document.getElementById("artigos").innerHTML= res;
+  }
 }
