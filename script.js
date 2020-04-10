@@ -1,6 +1,8 @@
 const submitButton = document.getElementById('submit')
 let verifyInput;
 let fileList;
+let fileList2;
+
 
 submitButton.addEventListener('click', () => {
   //verifyInput()
@@ -24,6 +26,22 @@ document.getElementById("filepicker").addEventListener("change", function(event)
   
 }, false);
 
+document.getElementById("filepicker2").addEventListener("change", function(event) {
+  let output = document.getElementById("listing2");
+  let files = event.target.files;
+  fileList2 = Object.values(files);
+  console.log(Object.values(files));
+
+  for (let i=0; i<files.length; i++) {
+    let item = document.createElement("li");
+    item.innerHTML = files[i].webkitRelativePath;
+    output.appendChild(item);
+  };
+  console.log(fileList2.map(e => e.name)) // AQUIAQUI AQUI. ESSA VARIÁVEL
+  return fileList2
+  
+}, false);
+
 function myFunction() // olha essa função
 {
 
@@ -34,12 +52,19 @@ function myFunction() // olha essa função
  return;
   }
  {
-    for (let a=0; a<fileList.length; a++)
+
+  for (let a=0; a<fileList.length; a++) // Ajuda aqui!!!
     {
-        var filename = fileList[a].name;        
-        var patt = new RegExp("Aplicabilidade"); 
-        var res = patt.test(filename);
-        document.getElementById("artigos").innerHTML=res;
+       var filename = fileList[a].name;  
+        for (let b=0; b<fileList2.lenght; b++) 
+        {     
+           var patt = new RegExp(fileList2[b].name); 
+           var res = patt.test(filename);
+           if (res==true)
+          {
+            document.getElementById("artigos").innerHTML=filename;
+          }
+        }
     }
   }
 }
