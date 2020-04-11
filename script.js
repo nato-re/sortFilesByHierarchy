@@ -45,21 +45,25 @@ document.getElementById("filepicker2").addEventListener("change", function(event
 function myFunction() // olha essa função
 {
 
-  if (!fileList) // caso seja 0 ele volta e não da erro, remove e vê o q rola.
+  if (!fileList2) // caso seja 0 ele volta e não da erro, remove e vê o q rola.
   {      
  // Return from the function.
  // Or handle it in a wiser manner than me.
  return;
   }
  {
-
+  let b;
+  b = fileList2.length;
+  let c;
   for (let a=0; a<fileList.length; a++) // Ajuda aqui!!!
     {
-       var filename = fileList[a].name;  
-        for (let b=0; b<fileList2.lenght; b++) 
+       var filename = fileList[a].name;
+       c = 0;  
+        while (c < b)
         {     
-           var patt = new RegExp(fileList2[b].name); 
+           var patt = new RegExp(fileList2[c].name); 
            var res = patt.test(filename);
+           c+=1;
            if (res==true)
           {
             document.getElementById("artigos").innerHTML=filename;
