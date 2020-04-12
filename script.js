@@ -3,14 +3,16 @@ let verifyInput;
 let fileList;
 let fileList2;
 
-
 submitButton.addEventListener('click', () => {
+  
   //verifyInput()
   //listFilesInFolder
 })
 
 
-document.getElementById("filepicker").addEventListener("change", function (event) {
+document.getElementById("filepicker").addEventListener("change", function (event) 
+{ 
+  document.getElementById("listing").innerHTML = ""; 
   let output = document.getElementById("listing");
   let files = event.target.files;
   fileList = Object.values(files);
@@ -26,7 +28,9 @@ document.getElementById("filepicker").addEventListener("change", function (event
 
 }, false);
 
-document.getElementById("filepicker2").addEventListener("change", function (event) {
+document.getElementById("filepicker2").addEventListener("change", function (event) 
+{
+  document.getElementById("listing2").innerHTML = ""; 
   let output = document.getElementById("listing2");
   let files = event.target.files;
   fileList2 = Object.values(files);
@@ -45,14 +49,15 @@ document.getElementById("filepicker2").addEventListener("change", function (even
 console.log('FileList2', fileList2)
 function myFunction() // olha essa função
 {
-
+  document.getElementById("artigos").innerHTML = ""; 
   if (!fileList2) // caso seja 0 ele volta e não da erro, remove e vê o q rola.
   {
     // Return from the function.
     // Or handle it in a wiser manner than me.
     return;
   }
-  {
+  { 
+    let output2 = document.getElementById("artigos");
     let b;
     b = fileList2.length;
     let c;
@@ -64,8 +69,11 @@ function myFunction() // olha essa função
         var patt = new RegExp(fileList2[c].name);
         var res = patt.test(filename);
         c += 1;
-        if (res == true) {
-          document.getElementById("artigos").innerHTML = filename;
+        if (res == true) 
+        {
+          let item = document.createElement("li");
+          item.innerHTML = filename;
+          output2.appendChild(item);
         }
       }
     }
